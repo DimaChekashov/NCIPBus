@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NCIPBus</string>
+
+    <string name="nav_time">Время</string>
+    <string name="nav_map">Карта</string>
+    <string name="nav_bus">Остановка</string>
 </resources>
