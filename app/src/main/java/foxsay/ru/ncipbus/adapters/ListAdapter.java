@@ -1,4 +1,4 @@
-package foxsay.ru.ncipbus;
+package foxsay.ru.ncipbus.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,8 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import foxsay.ru.ncipbus.R;
+import foxsay.ru.ncipbus.TimeItem;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
 

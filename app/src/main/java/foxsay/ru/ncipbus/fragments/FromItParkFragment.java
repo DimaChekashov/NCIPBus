@@ -1,4 +1,4 @@
-package foxsay.ru.ncipbus;
+package foxsay.ru.ncipbus.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,8 +16,11 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import foxsay.ru.ncipbus.R;
+import foxsay.ru.ncipbus.TimeItem;
+import foxsay.ru.ncipbus.adapters.ListAdapter;
 
-public class TimeFragment extends Fragment {
+public class FromItParkFragment extends Fragment {
 
     private List<TimeItem> timesList = new ArrayList<>();
     private RecyclerView recyclerView;
@@ -26,14 +29,14 @@ public class TimeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_time, container, false);
+        return inflater.inflate(R.layout.fragment_from_itpark, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView = view.findViewById(R.id.recycler_view);
+        recyclerView = view.findViewById(R.id.recycler_view_from);
 
         tAdapter = new ListAdapter(timesList);
         RecyclerView.LayoutManager tLayoutManager = new LinearLayoutManager(Objects.requireNonNull(getContext()).getApplicationContext());
@@ -46,22 +49,34 @@ public class TimeFragment extends Fragment {
     }
 
     private void prepareTimesData() {
-        TimeItem timeItem = new TimeItem("10:00", true);
+        TimeItem timeItem = new TimeItem("11:00", true);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("13:00", true);
+        timeItem = new TimeItem("12:00", true);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("05:43", false);
+        timeItem = new TimeItem("12:30", false);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("14:60", false);
+        timeItem = new TimeItem("13:00", false);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("17:00", true);
+        timeItem = new TimeItem("14:30", true);
+        timesList.add(timeItem);
+
+        timeItem = new TimeItem("15:00", false);
         timesList.add(timeItem);
 
         timeItem = new TimeItem("16:00", false);
+        timesList.add(timeItem);
+
+        timeItem = new TimeItem("17:05", false);
+        timesList.add(timeItem);
+
+        timeItem = new TimeItem("17:40", false);
+        timesList.add(timeItem);
+
+        timeItem = new TimeItem("18:10", false);
         timesList.add(timeItem);
     }
 }

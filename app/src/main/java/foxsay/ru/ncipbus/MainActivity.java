@@ -3,6 +3,9 @@ package foxsay.ru.ncipbus;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import foxsay.ru.ncipbus.fragments.BusFragment;
+import foxsay.ru.ncipbus.fragments.MapFragment;
+import foxsay.ru.ncipbus.fragments.TimeFragment;
 
 import android.os.Bundle;
 import android.view.MenuItem;

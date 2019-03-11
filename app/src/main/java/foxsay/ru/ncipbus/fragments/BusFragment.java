@@ -1,4 +1,4 @@
-package foxsay.ru.ncipbus;
+package foxsay.ru.ncipbus.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import foxsay.ru.ncipbus.R;
 
 public class BusFragment extends Fragment {
 
