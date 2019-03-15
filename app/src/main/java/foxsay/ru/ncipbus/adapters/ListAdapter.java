@@ -1,10 +1,13 @@
 package foxsay.ru.ncipbus.adapters;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -41,8 +44,21 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
+        String currentDateandTime = new SimpleDateFormat("HH:mm:ss").format(new Date());
+        Log.d("ListAdapter", "currentDateandTime " + currentDateandTime);
         TimeItem timeItem = timesList.get(position);
-        holder.time.setText(timeItem.getTime());
+        holder.time.setText(currentDateandTime);
+    }
+
+    public void timer() {
+        for(int i = 0; i < timesList.size(); i++) {
+            //change data depending on time
+
+            //set new data to the deadline field
+            timesList.get(i).setTime("" + i);
+            notifyDataSetChanged();
+        }
     }
 
     @Override

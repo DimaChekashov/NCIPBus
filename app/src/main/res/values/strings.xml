@@ -7,4 +7,11 @@
 
     <string name="to_itpark_label">До Айти Парка</string>
     <string name="from_itpark_label">Из Айти Парка</string>
+
+    <string name="bus_stop_1">Остоновка 30-й Комплекс</string>
+    <string name="bus_stop_2">Остоновка Магазин "Глобус"</string>
+    <string name="bus_stop_3">Остоновка Магазин "Океан"</string>
+    <string name="bus_stop_4">Остоновка Фирменный магазин "КАМАЗ"</string>
+    <string name="last_bus_stop">Остоновка Айти Парк</string>
+
 </resources>

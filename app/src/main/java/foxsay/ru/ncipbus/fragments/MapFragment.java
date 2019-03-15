@@ -10,6 +10,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +20,7 @@ import foxsay.ru.ncipbus.R;
 public class MapFragment extends Fragment implements OnMapReadyCallback {
     private MapView mapView;
     private GoogleMap gmap;
+    MarkerOptions place1, place2, place3, place4, place5;
 
     private static final String MAP_VIEW_BUNDLE_KEY = "AIzaSyD3Kx94UnUwOfK3yxStfhjf62HjOorNBw4";
 
@@ -40,6 +42,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mapView = view.findViewById(R.id.map_view);
         mapView.onCreate(mapViewBundle);
         mapView.getMapAsync(this);
+
+        place1 = new MarkerOptions().position(new LatLng(55.748673, 52.417889)).title(getResources().getString(R.string.bus_stop_1));
+        place2 = new MarkerOptions().position(new LatLng(55.745350, 52.423543)).title(getResources().getString(R.string.bus_stop_2));
+        place3 = new MarkerOptions().position(new LatLng(55.743030, 52.427472)).title(getResources().getString(R.string.bus_stop_3));
+        place4 = new MarkerOptions().position(new LatLng(55.739852, 52.432945)).title(getResources().getString(R.string.bus_stop_4));
+        place5 = new MarkerOptions().position(new LatLng(55.738453, 52.449557)).title(getResources().getString(R.string.last_bus_stop));
+
     }
 
     @Override
@@ -94,8 +103,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         gmap = googleMap;
-        gmap.setMinZoomPreference(13);
+        gmap.setMinZoomPreference(15);
         LatLng ny = new LatLng(55.748671, 52.417905);
         gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));
+        gmap.addMarker(place1);
+        gmap.addMarker(place2);
+        gmap.addMarker(place3);
+        gmap.addMarker(place4);
+        gmap.addMarker(place5);
     }
 }

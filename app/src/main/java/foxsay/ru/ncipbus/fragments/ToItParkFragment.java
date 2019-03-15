@@ -1,6 +1,7 @@
 package foxsay.ru.ncipbus.fragments;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,19 @@ public class ToItParkFragment extends Fragment {
         recyclerView.setAdapter(tAdapter);
 
         prepareTimesData();
+        setHandler();
+    }
+
+    public void setHandler(){
+        final Handler handler = new Handler();
+        final int delay = 1000 ; //1000 milliseconds = 1 sec
+
+        handler.postDelayed(new Runnable(){
+            public void run(){
+                tAdapter.timer(); // call our adapter method here
+                handler.postDelayed(this, delay);
+            }
+        }, delay);
     }
 
     private void prepareTimesData() {
