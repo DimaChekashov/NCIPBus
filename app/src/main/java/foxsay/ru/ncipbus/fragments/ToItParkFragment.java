@@ -63,37 +63,37 @@ public class ToItParkFragment extends Fragment {
     }
 
     private void prepareTimesData() {
-        TimeItem timeItem = new TimeItem("7:05", true);
+        TimeItem timeItem = new TimeItem(7, 5);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("7:35", true);
+        timeItem = new TimeItem(7, 35);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("8:05", false);
+        timeItem = new TimeItem(8, 5);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("8:35", false);
+        timeItem = new TimeItem(8, 35);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("11:15", true);
+        timeItem = new TimeItem(11, 15);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("12:15", false);
+        timeItem = new TimeItem(12, 15);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("12:45", false);
+        timeItem = new TimeItem(12, 45);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("13:15", false);
+        timeItem = new TimeItem(13, 15);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("14:45", false);
+        timeItem = new TimeItem(14, 45);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("15:15", false);
+        timeItem = new TimeItem(15, 15);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("16:15", false);
+        timeItem = new TimeItem(16, 15);
         timesList.add(timeItem);
     }
 }

@@ -49,34 +49,34 @@ public class FromItParkFragment extends Fragment {
     }
 
     private void prepareTimesData() {
-        TimeItem timeItem = new TimeItem("11:00", true);
+        TimeItem timeItem = new TimeItem(11, 0);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("12:00", true);
+        timeItem = new TimeItem(12, 0);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("12:30", false);
+        timeItem = new TimeItem(12, 30);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("13:00", false);
+        timeItem = new TimeItem(13, 0);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("14:30", true);
+        timeItem = new TimeItem(14, 30);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("15:00", false);
+        timeItem = new TimeItem(15, 0);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("16:00", false);
+        timeItem = new TimeItem(16, 0);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("17:05", false);
+        timeItem = new TimeItem(17, 5);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("17:40", false);
+        timeItem = new TimeItem(17, 40);
         timesList.add(timeItem);
 
-        timeItem = new TimeItem("18:10", false);
+        timeItem = new TimeItem(18, 10);
         timesList.add(timeItem);
     }
 }

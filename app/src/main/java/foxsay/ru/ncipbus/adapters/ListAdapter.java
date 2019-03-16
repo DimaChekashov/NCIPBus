@@ -1,5 +1,7 @@
 package foxsay.ru.ncipbus.adapters;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,12 +22,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     private List<TimeItem> timesList;
 
     public class ListViewHolder extends RecyclerView.ViewHolder {
-        public TextView time, isArrived;
+        public TextView time, message;
 
         public ListViewHolder(@NonNull View view) {
             super(view);
             time = view.findViewById(R.id.item_time);
-            isArrived = view.findViewById(R.id.item_message);
+            message = view.findViewById(R.id.item_message);
         }
     }
 
@@ -42,21 +44,57 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
         return new ListViewHolder(itemView);
     }
 
+    @SuppressLint({"DefaultLocale", "SetTextI18n"})
     @Override
     public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
-        String currentDateandTime = new SimpleDateFormat("HH:mm:ss").format(new Date());
-        Log.d("ListAdapter", "currentDateandTime " + currentDateandTime);
         TimeItem timeItem = timesList.get(position);
-        holder.time.setText(currentDateandTime);
+        holder.time.setText(String.format("%02d", timeItem.getHourse())
+                + ":" + String.format("%02d", timeItem.getMinute()));
+
+        if(isArrive(timeItem.getHourse(), timeItem.getMinute())) {
+            holder.message.setText(geLastTime(timeItem.getHourse(), timeItem.getMinute()));
+            holder.message.setTextColor(Color.BLUE);
+        }
+
+        if (getLastMin(getTotalMin(timeItem.getHourse(), timeItem.getMinute()), getTotalCurrentMin()) < 15) {
+            holder.itemView.setBackgroundColor(0xFF1976D2);
+            holder.time.setTextColor(Color.WHITE);
+            holder.message.setTextColor(0xFFFF9800);
+        }
+    }
+
+    private boolean isArrive(int hour, int min) {
+        int total = getTotalMin(hour, min);
+        int totalCurrent = getTotalCurrentMin();
+        int res = getLastMin(total, totalCurrent);
+
+        return res > 0;
+    }
+
+    @SuppressLint("DefaultLocale")
+    private String geLastTime(int hour, int min) {
+        int total = getTotalMin(hour, min);
+        int totalCurrent = getTotalCurrentMin();
+        int res = getLastMin(total, totalCurrent);
+
+        return "Автобус приедет через: " + String.format("%02d", Math.round(res / 60)) + ":" + String.format("%02d", res % 60);
+    }
+
+    private int getTotalMin(int hour, int min) {
+        return (hour * 60) + min;
+    }
+
+    private int getLastMin(int total, int totalCurrent) {
+        return total - totalCurrent;
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    private int getTotalCurrentMin() {
+        return (Integer.valueOf(new SimpleDateFormat("HH").format(new Date())) * 60) + Integer.valueOf(new SimpleDateFormat("mm").format(new Date()));
     }
 
     public void timer() {
         for(int i = 0; i < timesList.size(); i++) {
-            //change data depending on time
-
-            //set new data to the deadline field
-            timesList.get(i).setTime("" + i);
             notifyDataSetChanged();
         }
     }

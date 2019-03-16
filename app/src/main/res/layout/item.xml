@@ -22,7 +22,7 @@
         android:id="@+id/item_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Автобус не приедет по этому времени!"
+        android:text="@string/item_message"
         android:textColor="@color/item_message_color"
         android:textSize="18sp" />
 

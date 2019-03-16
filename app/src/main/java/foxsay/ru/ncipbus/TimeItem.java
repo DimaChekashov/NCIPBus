@@ -1,31 +1,30 @@
 package foxsay.ru.ncipbus;
 
 public class TimeItem {
-    private String time;
-    private boolean isArrived;
+    private int hourse, minute;
 
     public TimeItem() {
 
     }
 
-    public TimeItem(String time, boolean isArrived) {
-        this.time = time;
-        this.isArrived = isArrived;
+    public TimeItem(int hourse, int minute) {
+        this.hourse = hourse;
+        this.minute = minute;
     }
 
-    public String getTime() {
-        return time;
+    public int getHourse() {
+        return hourse;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setHourse(int hourse) {
+        this.hourse = hourse;
     }
 
-    public boolean isArrived() {
-        return isArrived;
+    public int getMinute() {
+        return minute;
     }
 
-    public void setArrived(boolean arrived) {
-        isArrived = arrived;
+    public void setMinute(int minute) {
+        this.minute = minute;
     }
 }

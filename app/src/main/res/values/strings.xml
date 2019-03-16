@@ -14,4 +14,6 @@
     <string name="bus_stop_4">Остоновка Фирменный магазин "КАМАЗ"</string>
     <string name="last_bus_stop">Остоновка Айти Парк</string>
 
+    <string name="item_message">Автобус не приедет по этому времени!</string>
+
 </resources>
