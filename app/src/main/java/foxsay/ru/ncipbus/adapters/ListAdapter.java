@@ -56,7 +56,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
             holder.message.setTextColor(Color.BLUE);
         }
 
-        if (getLastMin(getTotalMin(timeItem.getHourse(), timeItem.getMinute()), getTotalCurrentMin()) < 15) {
+        if (getLastMin(getTotalMin(timeItem.getHourse(), timeItem.getMinute()), getTotalCurrentMin()) < 15 && getLastMin(getTotalMin(timeItem.getHourse(), timeItem.getMinute()), getTotalCurrentMin()) >= 0) {
             holder.itemView.setBackgroundColor(0xFF1976D2);
             holder.time.setTextColor(Color.WHITE);
             holder.message.setTextColor(0xFFFF9800);
