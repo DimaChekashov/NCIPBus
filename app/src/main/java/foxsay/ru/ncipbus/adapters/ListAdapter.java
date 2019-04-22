@@ -51,15 +51,23 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
         holder.time.setText(String.format("%02d", timeItem.getHourse())
                 + ":" + String.format("%02d", timeItem.getMinute()));
 
+        if (getLastMin(getTotalMin(timeItem.getHourse(),
+                timeItem.getMinute()),
+                getTotalCurrentMin()) < 15 && getLastMin(getTotalMin(timeItem.getHourse(),
+                timeItem.getMinute()),
+                getTotalCurrentMin()) >= 0) {
+            holder.itemView.setBackgroundColor(0xFFFF6F00);
+            holder.time.setTextColor(Color.WHITE);
+        }
+
         if(isArrive(timeItem.getHourse(), timeItem.getMinute())) {
             holder.message.setText(geLastTime(timeItem.getHourse(), timeItem.getMinute()));
             holder.message.setTextColor(Color.BLUE);
-        }
-
-        if (getLastMin(getTotalMin(timeItem.getHourse(), timeItem.getMinute()), getTotalCurrentMin()) < 15 && getLastMin(getTotalMin(timeItem.getHourse(), timeItem.getMinute()), getTotalCurrentMin()) >= 0) {
-            holder.itemView.setBackgroundColor(0xFF1976D2);
-            holder.time.setTextColor(Color.WHITE);
-            holder.message.setTextColor(0xFFFF9800);
+        } else {
+            holder.message.setText(R.string.item_message);
+            holder.message.setTextColor(0xFFFC1B1B);
+            holder.itemView.setBackgroundColor(0xFFFFFFFF);
+            holder.time.setTextColor(0xFF383838);
         }
     }
 
