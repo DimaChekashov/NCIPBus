@@ -15,5 +15,7 @@
     <string name="last_bus_stop">Остановка Айти Парк</string>
 
     <string name="item_message">Автобус не приедет по этому времени!</string>
+    <string name="select_bus_stop">Выберете остановку</string>
+    <string name="main_screen">Главный экран</string>
 
 </resources>

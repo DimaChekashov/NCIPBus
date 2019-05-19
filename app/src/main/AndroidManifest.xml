@@ -4,6 +4,7 @@
     package="foxsay.ru.ncipbus">
 
     <application
+        android:fullBackupContent="false"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,18 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".screens.SelectBusStop"
+            android:label="@string/select_bus_stop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/main_screen">
+
+        </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD3Kx94UnUwOfK3yxStfhjf62HjOorNBw4" />
-
     </application>
 
 </manifest>

@@ -17,12 +17,12 @@
         android:textColor="#2d2d2d"
         android:textSize="24sp" />
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="3dp"
-        android:src="@drawable/ic_down" />
+    <!--<ImageView-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginBottom="3dp"-->
+        <!--android:src="@drawable/ic_down" />-->
 
     <TextView
         android:layout_width="match_parent"
@@ -33,12 +33,12 @@
         android:textColor="#2d2d2d"
         android:textSize="24sp" />
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="3dp"
-        android:src="@drawable/ic_down" />
+    <!--<ImageView-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginBottom="3dp"-->
+        <!--android:src="@drawable/ic_down" />-->
 
     <TextView
         android:layout_width="match_parent"
@@ -49,12 +49,12 @@
         android:textColor="#2d2d2d"
         android:textSize="24sp" />
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="3dp"
-        android:src="@drawable/ic_down" />
+    <!--<ImageView-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginBottom="3dp"-->
+        <!--android:src="@drawable/ic_down" />-->
 
     <TextView
         android:layout_width="match_parent"
@@ -65,12 +65,12 @@
         android:textColor="#2d2d2d"
         android:textSize="24sp" />
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="3dp"
-        android:src="@drawable/ic_down" />
+    <!--<ImageView-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginBottom="3dp"-->
+        <!--android:src="@drawable/ic_down" />-->
 
     <TextView
         android:layout_width="match_parent"
